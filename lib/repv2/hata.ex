@@ -8,7 +8,7 @@ defmodule Repv2.Hata do
   # end
 
   def get_data do
-    Repv2.Repo.replica.all(from(u in "products", select: u.name))
+    Repv2.Repo.replica.all(from(u in "products", select: {u.name, u.price}))
   end
 
   def insert_user(name, price) do
